@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
-import 'new_login.dart';
+import 'package:login/Widgets/Widgets.dart';
+import 'login_page.dart';
+
+/**
+ * this class is a screen for the 'Register' state.
+ */
+
+Widgets _widgets = new Widgets();
 
 class RegisterScreen extends StatefulWidget {
   @override
@@ -7,6 +14,7 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreen extends State<RegisterScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,12 +50,12 @@ class _RegisterScreen extends State<RegisterScreen> {
           ),
           Column(
               children: [
-              _TextBox(title: "first name"),
-                _TextBox(title: "last name"),
-                _TextBox(title: "username"),
-                _TextBox(title: "email"),
-                _TextBox(title: "phone number"),
-                _TextBox(title: "password"),
+                _widgets.MyTextBox(title: "first name"),
+                _widgets.MyTextBox(title: "last name"),
+                _widgets.MyTextBox(title: "username"),
+                _widgets.MyTextBox(title: "email"),
+                _widgets.MyTextBox(title: "phone number"),
+                _widgets.MyTextBox(title: "password"),
                 Padding(
                     padding: const EdgeInsets.only(
                         left: 0.0, right: 500.0, top: 15, bottom: 0),
@@ -76,27 +84,3 @@ class _RegisterScreen extends State<RegisterScreen> {
   }
 }
 
-Widget _TextBox({String title = 'Title Menu'}){
-  return Padding(
-    padding: const EdgeInsets.only(
-        left: 0.0, right: 500.0, top: 15, bottom: 0),
-    //padding: EdgeInsets.symmetric(horizontal: 15),
-    child: TextField(
-      decoration: InputDecoration(
-        hintText: '$title',
-        filled: true,
-        fillColor: Colors.blueGrey[50],
-        labelStyle: TextStyle(fontSize: 12),
-        contentPadding: EdgeInsets.only(left: 30),
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.blueGrey[50]),
-          borderRadius: BorderRadius.circular(15),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.blueGrey[50]),
-          borderRadius: BorderRadius.circular(15),
-        ),
-      ),
-    ),
-  );
-}

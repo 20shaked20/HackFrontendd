@@ -11,6 +11,7 @@ class RoundedBorderDropdown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String DefaultDropDownValue = 'English';
     return Scaffold(
       appBar: AppBar(
         title: Text('Rounded Border Button in AppBar'),
@@ -25,6 +26,7 @@ class RoundedBorderDropdown extends StatelessWidget {
           ),
           child: DropdownButton<String>(
             // borderRadius: BorderRadius.all(Radius.circular(0.0)),
+              value: DefaultDropDownValue,
               underline: SizedBox.shrink(),
               icon: Icon(Icons.facebook),
               onChanged: (String changedValue) {

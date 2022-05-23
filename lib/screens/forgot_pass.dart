@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
-import 'new_login.dart';
-import 'register_page.dart';
+import 'package:login/Widgets/Widgets.dart';
+import 'login_page.dart';
+
+/**
+ * this class is a screen for the 'Forgot Password' state.
+ */
+
+
+Widgets _widgets = new Widgets();
 
 class ForgotPassScreen extends StatefulWidget {
   @override
@@ -23,7 +30,7 @@ class _ForgotPassScreen extends State<ForgotPassScreen> {
           ),
           Column(
             children: [
-              _TextBox(title: "enter your email"),
+              _widgets.MyTextBox(title: "enter your email"),
               Padding(
                 padding: const EdgeInsets.only(
                     left: 0.0, right: 500.0, top: 15, bottom: 0),
@@ -50,29 +57,4 @@ class _ForgotPassScreen extends State<ForgotPassScreen> {
       ),
     );
   }
-}
-
-Widget _TextBox({String title = 'Title Menu'}){
-  return Padding(
-    padding: const EdgeInsets.only(
-        left: 0.0, right: 500.0, top: 15, bottom: 0),
-    //padding: EdgeInsets.symmetric(horizontal: 15),
-    child: TextField(
-      decoration: InputDecoration(
-        hintText: '$title',
-        filled: true,
-        fillColor: Colors.blueGrey[50],
-        labelStyle: TextStyle(fontSize: 12),
-        contentPadding: EdgeInsets.only(left: 30),
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.blueGrey[50]),
-          borderRadius: BorderRadius.circular(15),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.blueGrey[50]),
-          borderRadius: BorderRadius.circular(15),
-        ),
-      ),
-    ),
-  );
 }
