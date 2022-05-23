@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'login_page.dart';
 
 final List<String> imgList = [
-  '/Users/Shaked/AndroidStudioProjects/Hakaton/assets/images/GiladLivshitz.jpeg',
-  '/Users/Shaked/AndroidStudioProjects/Hakaton/assets/images/OfriTavor.jpeg',
-  '/Users/Shaked/AndroidStudioProjects/Hakaton/assets/images/ShakedLevi.jpeg',
-  '/Users/Shaked/AndroidStudioProjects/Hakaton/assets/images/DanielRosenberg.jpeg',
-  '/Users/Shaked/AndroidStudioProjects/Hakaton/assets/images/MatanShimon.jpeg'
+  'assets/images/GiladLivshitz.jpeg',
+  'assets/images/OfriTavor.jpeg',
+  'assets/images/ShakedLevi.jpeg',
+  'assets/images/DanielRosenberg.jpeg',
+  'assets/images/MatanShimon.jpeg'
 ];
 
 final String gilad_info =

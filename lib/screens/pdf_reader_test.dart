@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'login_page.dart';
 
 final List<String> English = [
-  '/Users/Shaked/AndroidStudioProjects/Hakaton/assets/files/missim_eng.png',
+  'assets/files/missim_eng.png',
 ];
 
 final List<String> Hebrew = [
-  '/Users/Shaked/AndroidStudioProjects/Hakaton/assets/files/missim_heb.png',
+  'assets/files/missim_heb.png',
 ];
 
 
@@ -53,7 +53,7 @@ class _PDFReader extends State<PDFReader> {
           icon: Container(
             height: 25,
             child: Image.asset(
-                '/Users/Shaked/AndroidStudioProjects/Hakaton/assets/images/earth_icon.png'),
+                'assets/images/earth_icon.png'),
           ),
           onChanged: (String changedValue) {
             DropDownValue = changedValue;

@@ -24,7 +24,7 @@ class Widgets {
         child: Container(
           height: 100,
           child: Image.asset(
-              '/Users/Shaked/AndroidStudioProjects/Hakaton/assets/images/Pole-removebg-preview.png'),
+              'assets/images/Pole-removebg-preview.png'),
         ),
       ),
       Padding(
@@ -32,7 +32,7 @@ class Widgets {
         child: Container(
           height: 100,
           child: Image.asset(
-              '/Users/Shaked/AndroidStudioProjects/Hakaton/assets/images/Fole-removebg-preview.png'),
+              'assets/images/Fole-removebg-preview.png'),
         ),
       ),
     ]);
@@ -239,7 +239,7 @@ class Widgets {
                 child: Container(
                   height: 20,
                   child: Image.asset(
-                      '/Users/Shaked/AndroidStudioProjects/Hakaton/assets/images/google.png'),
+                      'assets/images/google.png'),
                 ),
               ),
             ),
