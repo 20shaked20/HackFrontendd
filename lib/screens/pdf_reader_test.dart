@@ -20,7 +20,8 @@ class PDFReader extends StatefulWidget {
 }
 
 class _PDFReader extends State<PDFReader> {
-  String DropDownValue = 'English';
+  String LanguageValue = 'English';
+  String FileValue = 'Tax';
   static Widget temp = ImageSlider(English);
 
   @override
@@ -37,11 +38,43 @@ class _PDFReader extends State<PDFReader> {
               Menu(),
             ],
           ),
-          temp,
+          Column(
+            children:[
+              _FileChooser(),
+              temp,
+            ],
+          ),
         ],
       ),
     );
   }
+
+  Widget _FileChooser(){
+    return Padding(
+      padding: const EdgeInsets.only(left: 0.0, right: 0.0, top: 0, bottom: 0),
+      child: DropdownButton<String>(
+        // borderRadius: BorderRadius.all(Radius.circular(0.0)),
+          focusColor: Colors.transparent,
+          /*removes the box behind it*/
+          underline: SizedBox.shrink(),
+          icon: Icon(Icons.file_present),
+          onChanged: (String changedValue) {
+            FileValue = changedValue;
+            setState(() {
+              FileValue;
+            });
+          },
+          value: FileValue,
+          items: <String>['Tax', 'Work', 'Russian', 'Japanese ']
+              .map((String value) {
+            return new DropdownMenuItem<String>(
+              value: value,
+              child: Text(value),
+            );
+          }).toList()),
+    );
+  }
+
   Widget _Languages() {
     return Padding(
       padding: const EdgeInsets.only(left: 0.0, right: 0.0, top: 0, bottom: 0),
@@ -56,8 +89,8 @@ class _PDFReader extends State<PDFReader> {
                 'assets/images/earth_icon.png'),
           ),
           onChanged: (String changedValue) {
-            DropDownValue = changedValue;
-            switch(DropDownValue){
+            LanguageValue = changedValue;
+            switch(LanguageValue){
               case 'English':{
                   temp = ImageSlider(English);
               }break;
@@ -66,10 +99,10 @@ class _PDFReader extends State<PDFReader> {
               }break;
             }
             setState(() {
-              DropDownValue;
+              LanguageValue;
             });
           },
-          value: DropDownValue,
+          value: LanguageValue,
           items: <String>['English', 'Hebrew', 'Russian', 'Japanese ']
               .map((String value) {
             return new DropdownMenuItem<String>(
@@ -81,7 +114,7 @@ class _PDFReader extends State<PDFReader> {
   }
 
 }
-Widget ImageSlider(List <String> Img_Language) {
+Widget ImageSlider(List<String> Img_Language/*String tofes, String lang*/) {
   return Container(
     child: CarouselSlider.builder(
       options: CarouselOptions(
@@ -102,6 +135,7 @@ Widget ImageSlider(List <String> Img_Language) {
               // margin: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
               // child: Image.network(imgList[index], fit: BoxFit.fill), */for http url*/
               child: Image.asset(
+                // 'assets/files/'+tofes+'_'+lang+'_'+String(index)+'.png',
                 Img_Language[index],
                 fit: BoxFit.contain,
               ),
